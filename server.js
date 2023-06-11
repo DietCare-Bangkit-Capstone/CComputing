@@ -8,7 +8,7 @@ const response = require('./response')
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    response(200, "API v1 ready to use", "SUCCESS", res)
+    response(200, "API Profiler ready to use", "SUCCESS", res)
 })
     
 app.get('/register', (req, res) => {
@@ -18,6 +18,11 @@ app.get('/register', (req, res) => {
         const data = {}
         response(200, fields, "SUCCESS", res)
     })
+})
+
+app.get('/register/:email', (req, res) => {
+    const email = req.params.email
+    response(200, { email }, `Spesific data by email '${email}'`, res)
 })
 
 app.post('/register', (req, res) => {
