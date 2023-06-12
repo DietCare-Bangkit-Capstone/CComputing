@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const port = 3304
+const port = process.env.PORT || 3304
 const bodyParser = require('body-parser')
 const db = require('./database')
 const response = require('./response')
@@ -19,7 +19,7 @@ app.get('/register', (req, res) => {
         response(200, fields, "SUCCESS", res)
     })
 })
-
+  
 app.get('/register/:email', (req, res) => {
     const email = req.params.email
     response(200, { email }, `Spesific data by email '${email}'`, res)
