@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     response(200, "API Profiler ready to use", "SUCCESS", res)
 })
     
-app.get('/register', (req, res) => {
+app.get('/users', (req, res) => {
     const sql = 'SELECT name, email, birthdate, sex, height, weight FROM profiler';
 
     db.query(sql, (err, fields) => {
@@ -20,7 +20,7 @@ app.get('/register', (req, res) => {
     })
 })
   
-app.get('/register/:email', (req, res) => {
+app.get('/users/:email', (req, res) => {
     const email = req.params.email
     response(200, { email }, `Spesific data by email '${email}'`, res)
 })
@@ -35,15 +35,16 @@ app.post('/register', (req, res) => {
         if (fields?.affectedRows) {
             const data = {
                 isSuccess: fields.affectedRows,
-                id: fields.insertId,
+                email: fields.email,
             }
             response(200, data, "Data Added Successfuly", res)
         }
     })
 })
 
-app.put('/register', (req, res) => {
-    const { name, email, password, birthdate, sex, height, weight } = req.body
+app.put('/users/:email', (req, res) => {
+    const email = req.params.email
+    const { name, password, birthdate, sex, height, weight } = req.body
     const sql = `UPDATE profiler SET name = '${name}', password = '${password}', birthdate = '${birthdate}', sex = '${sex}', height = ${height}, weight = ${weight} WHERE email = '${email}'`
     
     db.query(sql, (err, fields) => {
@@ -60,7 +61,7 @@ app.put('/register', (req, res) => {
     })
 })
 
-app.delete('/register', (req, res) => {
+app.delete('/users', (req, res) => {
     const { email } = req.body
     const sql = `DELETE FROM profiler WHERE email = '${email}'`
     db.query(sql, (err, fields) => {
