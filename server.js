@@ -22,12 +22,16 @@ app.get('/users', (req, res) => {
   
 app.get('/users/:email', (req, res) => {
     const email = req.params.email
-    response(200, { email }, `Spesific data by email '${email}'`, res)
+    const sql = `SELECT name, email, birthdate, sex, height, weight FROM profiler WHERE email = '${email}'`
+
+    db.query(sql, (err, fields) => {
+        const data = {}
+        response(200, fields, `Spesific data by email '${email}'`, res)
+    })
 })
 
 app.post('/register', (req, res) => {
     const { name, email, password, birthdate, sex, height, weight } = req.body
-
     const sql = `INSERT INTO profiler (name, email, password, birthdate, sex, height, weight) VALUES ('${name}', '${email}', '${password}', '${birthdate}', '${sex}', ${height}, ${weight})`
     
     db.query(sql, (err, fields) => {
@@ -41,6 +45,30 @@ app.post('/register', (req, res) => {
         }
     })
 })
+
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const sql = `SELECT email, password FROM profiler WHERE email = '${email}'`;
+
+    db.query(sql, (err, fields) => {
+        if (err) {
+            console.error('Kesalahan dalam menjalankan kueri:', err);
+            return response(500, {}, 'Terjadi kesalahan dalam login', res);
+        }
+
+        if (fields.length === 0) {
+            return response(200, { success: false }, 'Gagal login: Pengguna tidak ditemukan', res);
+        }
+
+        const user = fields[0];
+        if (user.password === password) {
+            return response(200, { success: true }, 'Berhasil login', res);
+        } else {
+            return response(200, { success: false }, 'Gagal login: Email atau password salah', res);
+        }
+    });
+});
+
 
 app.put('/users/:email', (req, res) => {
     const email = req.params.email
