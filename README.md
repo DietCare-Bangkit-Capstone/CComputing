@@ -27,7 +27,7 @@
 ### ☄️ API Documentation
 - All available API Endpoints could be accessed in schema Postman : https://schema.getpostman.com/json/collection/v2.1.0/collection.json
 
-- Live Server address : https://dietcare-project.et.r.appspot.com/
+- Live Server Address : https://dietcare-project.et.r.appspot.com/
 
 
 
