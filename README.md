@@ -12,13 +12,13 @@
 
 - 🌟 Framework : Express.Js 
 
-- 🌟 Manage Databases : MySQL
+- 🌟 Manage Databases : CloudSQL
 
 -  🌟 Deployment : App Engine Google Cloud
     <p>
     <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" /> 
     <img alt="Expressjs" src="https://img.shields.io/badge/-Expressjs-000000?style=flat-square&logo=Expressjs&logoColor=white" />
-    <img alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white" />
+    <img alt="CloudSQL" src="https://img.shields.io/badge/-CloudSQL-4479A1?style=flat-square&logo=CloudSQL&logoColor=white" />
     <img alt="AppEngine" src="https://img.shields.io/badge/-AppEngine-4285F4?style=flat-square&logo=AppEngine&logoColor=white" />
     </p>
 
