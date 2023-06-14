@@ -10,11 +10,9 @@ Language : Node.Js
 Framework : Express.Js 
 
 Manage Databases : MySQL
-
-<img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
-
-<img alt="Nodejs" src="https://img.shields.io/badge/mySQL-Database-blue" />
-
-  
-
+<p>
+<img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" /> 
+<img alt="Expressjs" src="https://img.shields.io/badge/-Expressjs-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg&logoColor=white" />
+<img alt="MySQL" src="https://img.shields.io/badge/-MySQL-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" />
+</p>
 
