@@ -2,8 +2,4 @@ runtime: nodejs16
 service: default
 env_variables:
   GAE_DB_SOCKET: /cloudsql/dietcare-project:asia-southeast2:profilerdb
-  DB_HOST: 34.128.85.210
-  DB_DATABASE: userdb
-  DB_USER: root
-  DB_PASSWORD: 1l2a3b4i5b
   NODE_ENV: production
