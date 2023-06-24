@@ -4,6 +4,7 @@ const port = process.env.PORT || 3304
 const bodyParser = require('body-parser')
 const db = require('./database')
 const response = require('./response')
+require('dotenv').config();
 
 app.use(bodyParser.json())
 
